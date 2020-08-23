@@ -10,7 +10,7 @@ def login_home(request):
 		username = request.POST['username']
 		password = request.POST['password']
 		user = authenticate(request, username=username, password=password)
-		if user is not None: #If the user exists
+		if user is not None: #This means If the user exists
 			login(request, user)
 			messages.success(request, ('You Are Logged in'))
 			return redirect('main')
