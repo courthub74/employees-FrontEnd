@@ -20,6 +20,11 @@ def login_home(request):
 	else:
 		return render(request, "authenticate/login.html", {})
 
+#LOGOUT
+def logout_user(request):
+	logout(request)
+	messages.success(request, ('You Have been Logged out'))
+	return redirect('login')
 
 #MAIN
 def main(request):
